@@ -1,0 +1,31 @@
+select 
+startyear,	
+	sum(case when genres ilike '%action%' then 1 else 0 end) as nr_of_action_movies,
+	sum(case when genres ilike '%adult%' then 1 else 0 end) as nr_of_adult_movies,
+	sum(case when genres ilike '%adventure%' then 1 else 0 end) as nr_of_adventure_movies,
+	sum(case when genres ilike '%animation%' then 1 else 0 end) as nr_of_animation_movies,
+	sum(case when genres ilike '%biography%' then 1 else 0 end) as nr_of_biography_movies,
+  	sum(case when genres ilike '%documentary%' then 1 else 0 end) as nr_of_documentary_movies,
+	sum(case when genres ilike '%drama%' then 1 else 0 end) as nr_of_drama_movies,
+	sum(case when genres ilike '%family%' then 1 else 0 end) as nr_of_family_movies,
+	sum(case when genres ilike '%fantasy%' then 1 else 0 end) as nr_of_fantasy_movies,
+	sum(case when genres ilike '%film-noir%' then 1 else 0 end) as nr_of_film_noir_movies,
+  	sum(case when genres ilike '%game-show%' then 1 else 0 end) as nr_of_game_show_movies,
+	sum(case when genres ilike '%history%' then 1 else 0 end) as nr_of_history_movies,
+	sum(case when genres ilike '%horror%' then 1 else 0 end) as nr_of_horror_movies,
+	sum(case when genres ilike '%music%' then 1 else 0 end) as nr_of_music_movies,
+	sum(case when genres ilike '%musical%' then 1 else 0 end) as nr_of_musical_movies,
+  	sum(case when genres ilike '%mystery%' then 1 else 0 end) as nr_of_mystery_movies,
+	sum(case when genres ilike '%news%' then 1 else 0 end) as nr_of_news_movies,
+	sum(case when genres ilike '%reality-TV%' then 1 else 0 end) as nr_of_reality_tv_movies,
+	sum(case when genres ilike '%romance%' then 1 else 0 end) as nr_of_romance_movies,
+	sum(case when genres ilike '%sci-fi%' then 1 else 0 end) as nr_of_sci_fi_movies,
+  	sum(case when genres ilike '%short%' then 1 else 0 end) as nr_of_short_movies,
+	sum(case when genres ilike '%sport%' then 1 else 0 end) as nr_of_sport_movies,
+	sum(case when genres ilike '%talk-show%' then 1 else 0 end) as nr_of_talk_show_movies,
+	sum(case when genres ilike '%thriller%' then 1 else 0 end) as nr_of_thriller_movies,
+	sum(case when genres ilike '%war%' then 1 else 0 end) as nr_of_war_movies,
+    sum(case when genres ilike '%western%' then 1 else 0 end) as nr_of_western_movies
+  into karim.genre_per_year
+from movies
+Group by startyear
